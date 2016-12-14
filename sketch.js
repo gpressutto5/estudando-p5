@@ -1,5 +1,3 @@
-var paint = false;
-
 var col = {
   r: 0,
   g: 0,
@@ -19,22 +17,18 @@ function setup() {
 }
 
 function draw() {
-  if (paint) {
-    noStroke();
-    fill(col.r, col.g, col.b);
-    ellipse(mouseX,mouseY,20,20);
-  }
 }
 
 function touchStarted() {
   col.r = random(0, 255);
   col.g = random(0, 255);
   col.b = random(0, 255);
-  paint = true;
 }
 
-function touchEnded() {
-  paint = false;
+function touchMoved() {
+  noStroke();
+  fill(col.r, col.g, col.b);
+  ellipse(mouseX,mouseY,20,20);
 }
 
 function download() {
