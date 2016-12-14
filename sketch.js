@@ -9,8 +9,11 @@ var col = {
 function setup() {
 	var canvasDiv = document.getElementById("test");
 	var width = canvasDiv.offsetWidth-50;
+  //var aspect = 0.5625;
+  var aspect = window.screen.availHeight / window.screen.availWidth;
+  var height = (width*aspect)-(window.screen.availHeight/10);
 	
-  var myCanvas = createCanvas(width,width*0.5625);
+  var myCanvas = createCanvas(width, height);
 	myCanvas.parent('test');
   background(255);
 }
